@@ -1,0 +1,31 @@
+Package: dcmprobs
+Title: Log-linear Cognitive Diagnostic Model Item Response Function
+Version: 0.1.0
+Authors@R: 
+    person("W. Jake", "Thompson", , "wjakethompson@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7339-0300"))
+Description: A shiny app for illustrating item response probabilities for
+    each attribute profile. Users input parameter values for relevant
+    variables. The Shiny app then calculate the probability that an
+    individual in each class provides a correct response to an item with
+    the given parameter values.
+License: MIT + file LICENSE
+Imports: 
+    dplyr,
+    forcats,
+    ggmeasr,
+    ggplot2,
+    glue,
+    shiny,
+    showtext,
+    stats,
+    sysfonts,
+    tibble,
+    tidyr
+Remotes:
+    wjakethompson/ggmeasr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    pkgload

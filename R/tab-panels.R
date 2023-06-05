@@ -1,0 +1,36 @@
+parameter_tabs <- tabsetPanel(
+  id = "params",
+  type = "hidden",
+  tabPanel("One",
+           numericInput("l1_0", HTML("Intercept (&lambda;<sub>i,0</sub>)"),
+                        value = -1.73, step = 0.1),
+           numericInput("l1_11", HTML("Main effect (&lambda;<sub>i,1(1)</sub>)"),
+                        min = 0, value = 3.93, step = 0.1)
+  ),
+  tabPanel("Two", 
+           numericInput("l2_0", HTML("Intercept (&lambda;<sub>i,0</sub>)"), value = -1.73),
+           numericInput("l2_11", HTML("Main effect for Attribute 1 (&lambda;<sub>i,1(1)</sub>)"),
+                        min = 0, value = 2.14, step = 0.1),
+           numericInput("l2_12", HTML("Main effect for Attribute 2 (&lambda;<sub>i,1(2)</sub>)"),
+                        min = 0, value = 1.32, step = 0.1),
+           numericInput("l2_212", HTML("Two-way Interaction (&lambda;<sub>i,2(1,2)</sub>)"),
+                        min = -1.32, value = 0.47, step = 0.1)
+  ),
+  tabPanel("Three",
+           numericInput("l3_0", HTML("Intercept (&lambda;<sub>i,0</sub>)"), value = -1.73),
+           numericInput("l3_11", HTML("Main effect for Attribute 1 (&lambda;<sub>i,1(1)</sub>)"),
+                        min = 0, value = 0.8, step = 0.1),
+           numericInput("l3_12", HTML("Main effect for Attribute 2 (&lambda;<sub>i,1(2)</sub>)"),
+                        min = 0, value = 0.6, step = 0.1),
+           numericInput("l3_13", HTML("Main effect for Attribute 3 (&lambda;<sub>i,1(3)</sub>)"),
+                        min = 0, value = 0.9, step = 0.1),
+           numericInput("l3_212", HTML("Two-way Interaction for Attributes 1 and 2 (&lambda;<sub>i,2(1,2)</sub>)"),
+                        min = -0.6, value = -0.1, step = 0.1),
+           numericInput("l3_213", HTML("Two-way Interaction for Attributes 1 and 3 (&lambda;<sub>i,2(1,3)</sub>)"),
+                        min = -0.8, value = 0.8, step = 0.1),
+           numericInput("l3_223", HTML("Two-way Interaction for Attributes 2 and 3 (&lambda;<sub>i,2(2,3)</sub>)"),
+                        min = -0.6, value = 0.9, step = 0.1),
+           numericInput("l3_3123", HTML("Three-way Interaction (&lambda;<sub>i,3(1,2,3)</sub>)"),
+                        min = -1.4, value = 0.2, step = 0.1)
+  )
+)
