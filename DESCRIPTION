@@ -32,3 +32,5 @@ RoxygenNote: 7.2.3
 Suggests: 
     pkgload,
     ragg
+URL: https://github.com/atlas-aai/dcmprobs
+BugReports: https://github.com/atlas-aai/dcmprobs/issues
