@@ -7,24 +7,35 @@
 dcmApp <- function(...) {
   sysfonts::font_add_google("Open Sans", "Open Sans")
   
-  ui <- fluidPage(
+  ui <- dashboardPage(
+    title = "DCM Item Response Functions",
+    ## header -----
+    dashboardHeader(title = logo_measr_light, titleWidth = 400),
     
-    # Application title
-    titlePanel("LCDM Response Probabilities"),
+    ## sidebar -----
+    dashboardSidebar(collapsed = TRUE, width = 200,
+                     sidebarMenu(menuItem("Github", icon = icon("github"),
+                                          href = "https://github.com/wjakethompson/dcm-probs"))),
     
-    # Sidebar with a slider input for number of bins 
-    sidebarLayout(
-      sidebarPanel(
-        selectInput("atts", "Attributes", 
-                    choices = c("One", "Two", "Three"),
-                    selected = "Two"
-        ),
-        parameter_tabs,
-      ),
-      mainPanel(
-        plotOutput("item_response")
-      )
-    )
+    ## body -----
+    dashboardBody(theme_measr_shiny,
+                  fluidRow(
+                    box(title = "Log-linear Cognitive Diagnostic Model Response Probabilities",
+                        width = 12, solidHeader = TRUE, status = "primary",
+                        sidebarLayout(
+                          sidebarPanel(width = 4,
+                            selectInput("atts", "Attributes",
+                                        choices = c("One", "Two", "Three"),
+                                        selected = "Two"
+                            ),
+                            p(HTML("<b>Parameter Values (Log-Odds)</b>")),
+                            parameter_tabs,
+                          ),
+                          mainPanel(width = 8,
+                            plotOutput("item_response")
+                          )
+                        )))
+                  )
   )
   
   server <- function(input, output, session) {
