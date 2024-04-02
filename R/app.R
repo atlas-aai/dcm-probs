@@ -18,16 +18,20 @@ dcmApp <- function(...) {
                                           href = "https://github.com/wjakethompson/dcm-probs"))),
     
     ## body -----
-    dashboardBody(theme_measr_shiny,
-                  fluidRow(lcdmUI("lcdm")),
-                  fluidRow(dinoaUI("dina", name = "Deterministic Input, Noisy \"And\" Gate (DINA) Response Probabilities")),
-                  fluidRow(dinoaUI("dino", name = "Deterministic Input, Noisy \"Or\" Gate (DINO) Response Probabilities")))
+    dashboardBody(
+      theme_measr_shiny,
+      fluidRow(lcdmUI("lcdm")),
+      fluidRow(dinoaUI("dino", name = "Deterministic Input, Noisy \"Or\" Gate (DINO) Response Probabilities")),
+      fluidRow(dinoaUI("dina", name = "Deterministic Input, Noisy \"And\" Gate (DINA) Response Probabilities")),
+      fluidRow(crumUI("crum"))
+    )
   )
   
   server <- function(input, output, session) {
     lcdmServer("lcdm")
-    dinaServer("dina")
     dinoServer("dino")
+    dinaServer("dina")
+    crumServer("crum")
   }
   
   shinyApp(ui, server, ...)
