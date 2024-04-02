@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.2.3",
+    "Version": "4.3.0",
     "Repositories": [
       {
         "Name": "V1",
@@ -113,12 +113,6 @@
       "Version": "0.1-3",
       "Source": "Repository",
       "Repository": "CRAN",
-      "RemoteType": "standard",
-      "RemotePkgRef": "base64enc",
-      "RemoteRef": "base64enc",
-      "RemoteRepos": "https://cran.rstudio.com/",
-      "RemotePkgPlatform": "aarch64-apple-darwin20",
-      "RemoteSha": "0.1-3",
       "Requirements": [
         "R"
       ],
@@ -457,12 +451,6 @@
       "Version": "1.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "RemoteType": "standard",
-      "RemotePkgRef": "extrafontdb",
-      "RemoteRef": "extrafontdb",
-      "RemoteRepos": "https://cran.rstudio.com/",
-      "RemotePkgPlatform": "aarch64-apple-darwin20",
-      "RemoteSha": "1.0",
       "Requirements": [
         "R"
       ],
@@ -804,12 +792,6 @@
       "Version": "0.8.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "RemoteType": "standard",
-      "RemotePkgRef": "hrbrthemes",
-      "RemoteRef": "hrbrthemes",
-      "RemoteRepos": "https://cran.rstudio.com/",
-      "RemotePkgPlatform": "aarch64-apple-darwin20",
-      "RemoteSha": "0.8.0",
       "Requirements": [
         "R",
         "extrafont",
